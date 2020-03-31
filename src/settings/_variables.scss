@@ -1,0 +1,60 @@
+//
+// [ ENVIRONMENT ]
+// __________________________________________________
+//
+// If set to true, will display an outline on each HTML element.
+// Will also provide a small colored line on the footer of the page indicating the active media-query breakpoint.
+//
+
+$debug: false;
+
+//
+// [ TYPOGRAPHY ]
+// __________________________________________________
+//
+//
+
+$fonts: (
+    primary: 'Source Sans Pro',
+    secondary: 'Open Sans',
+    accent: 'Montserrat',
+    fallback: (
+        arial,
+        sans-serif,
+    ),
+);
+
+// If set to 'true', will load all the fonts in the $fonts map from Google Fonts.
+$loadFromGoogle: true;
+
+//
+// [ THEME ]
+// __________________________________________________
+//
+// Colors selected from: https://material.io/resources/color/#!/
+//
+
+$colors: (
+    black: #222,
+    white: #fff,
+    grayDark: #696969,
+    grayMedium: #bdbdbd,
+    grayLight: #fafafa,
+    success: #4caf50,
+    info: #ffc107,
+    danger: #e91e63,
+);
+
+//
+// [ LAYOUT ]
+// __________________________________________________
+//
+//
+
+$breakpoints: (
+    s: 480px,
+    m: 1024px,
+);
+
+// CORE - DONT REMOVE!
+@import '../core/settings/variables';

@@ -1,0 +1,40 @@
+//
+// [ ALIAS ]
+// __________________________________________________
+//
+//
+
+//
+// Gets one or many fonts from the map '$fonts'.
+//
+// @param string $fontsParam The key or keys
+// @return string The value or values for all the given keys
+//
+@function font($fontsParam...) {
+    $fallbackFonts: map-get($fonts, fallback);
+    $fontFamily: null;
+
+    @each $font in $fontsParam {
+        $fontName: map-get($fonts, $font);
+        $fontFamily: append($fontFamily, $fontName, 'comma');
+    }
+
+    @each $font in $fallbackFonts {
+        $fontFamily: append($fontFamily, $font, 'comma');
+    }
+
+    @return $fontFamily;
+}
+
+//
+// Alias for 'map-get' in the map $colors.
+//
+// @param string $colorName The key of the color
+// @return string The value for the given key
+//
+@function color($colorName) {
+    @return map-get($colors, $colorName);
+}
+
+// CORE - DONT REMOVE!
+@import '../core/functions/main';

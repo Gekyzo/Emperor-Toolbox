@@ -1,0 +1,11 @@
+{
+    "private": true,
+    "scripts": {
+        "dev": "sass src:dist",
+        "prod": "npm run dev -- --no-source-map --style=compressed",
+        "watch": "npm run dev -- --watch"
+    },
+    "devDependencies": {
+        "sass": "^1.26.3"
+    }
+}

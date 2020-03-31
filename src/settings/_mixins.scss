@@ -1,0 +1,46 @@
+//
+// [ MEDIA QUERIES BREAKPOINTS ]
+// __________________________________________________
+//
+// Making use of the $breakpoints map, creates mixins for responsive rules.
+//
+//
+@mixin mobile {
+    @media (max-width: map-get($breakpoints, s) - 1px) {
+        @if $debug {
+            background-color: rgba(map-get($debugColors, red), 0.3);
+            outline: dashed 1px black;
+        }
+        @content;
+    }
+}
+
+@mixin tablet {
+    @media (min-width: map-get($breakpoints, s)) and (max-width: map-get($breakpoints, m) - 1px) {
+        @if $debug {
+            background-color: rgba(map-get($debugColors, yellow), 0.3);
+            outline: dashed 1px black;
+        }
+        @content;
+    }
+}
+
+@mixin desktop {
+    @media (min-width: map-get($breakpoints, m)) {
+        @if $debug {
+            background-color: rgba(map-get($debugColors, green), 0.3);
+            outline: dashed 1px black;
+        }
+        @content;
+    }
+}
+
+@mixin from-tablet {
+    @media (min-width: map-get($breakpoints, s)) {
+        @if $debug {
+            background-color: rgba(map-get($debugColors, yellow), 0.3);
+            outline: dashed 1px black;
+        }
+        @content;
+    }
+}

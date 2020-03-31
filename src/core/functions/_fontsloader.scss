@@ -1,0 +1,19 @@
+//
+// Imports all the fonts in a map
+// @param map $fontsMap  The map variable with the fonts
+// @param string $provider|null The font provider
+//
+@mixin loadFonts($fontsMap, $provider: 'Google') {
+    @if $loadFromGoogle {
+        $fontsList: remove(map-keys($fontsMap), fallback);
+        @each $font in $fontsList {
+            $fontValue: map-get($fontsMap, $font);
+            @if (map-has-key($fontsProviders, $provider)) {
+                $providerRoute: map-get($fontsProviders, $provider);
+                @import url($providerRoute+$fontValue);
+            }
+        }
+    }
+}
+
+@include loadFonts($fonts);
